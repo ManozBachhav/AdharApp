@@ -1,4 +1,3 @@
-```
 # AdharApp (Console Based Hibernate Project)
 
 AdharApp is a simple **console-based CRUD application** built using  
@@ -9,8 +8,7 @@ The application manages **Person** and **Adhar** records with a One-to-One relat
 
 ## 🚀 Features
 
-### Person & Adhar Operations
-The app supports the following functions:
+The app supports the following operations:
 
 1. **Add Person with Adhar**  
 2. **Get Person by Person ID**  
@@ -18,7 +16,7 @@ The app supports the following functions:
 4. **Get all Person + Adhar records**  
 5. **Update Person details using Person ID**  
 6. **Update only Adhar number using Person ID**  
-7. **Delete Person using Person ID** (Adhar also deleted due to Cascade)  
+7. **Delete Person using Person ID** (Adhar automatically deleted due to Cascade)  
 8. **Delete only Adhar using Person ID** (Person remains)
 
 ---
@@ -26,7 +24,6 @@ The app supports the following functions:
 ## 🧱 Project Structure
 
 ```
-
 src/
 ├── com.Entity
 │   ├── Person.java
@@ -40,35 +37,33 @@ src/
 │   └── HomeController.java
 │
 └── resources
-└── hibernate.cfg.xml
+    └── hibernate.cfg.xml
+```
 
-````
-
-### Relationship Meaning:
-- Adding a Person also adds their Adhar  
-- Deleting a Person deletes their Adhar  
-- You can delete only Adhar without deleting the Person  
+### Relationship Meaning
+- Adding Person ➝ Adhar is saved automatically  
+- Updating Person ➝ Only Person updated  
+- Deleting Person ➝ Adhar also deleted (Cascade = ALL)  
+- Deleting only Adhar ➝ Person stays  
 
 ---
 
 ## ▶ How to Run
 
-### 1. Create MySQL database:
+### 1. Create a MySQL database:
 ```sql
 CREATE DATABASE mydb;
-````
-
-### 2. Update your DB credentials in `hibernate.cfg.xml`
-
-### 3. Compile & Run in IntelliJ or terminal:
-
 ```
+
+### 2. Update database credentials inside `hibernate.cfg.xml`.
+
+### 3. Run the application:
+```bash
 java com.Controller.HomeController
 ```
 
-### 4. Uncomment desired method inside `HomeController`:
-
-```
+### 4. Choose desired operation inside `HomeController`:
+```java
 pas.addPersonWithAdhar();
 pas.updatePersonDetailonlyUsingPID();
 pas.getallData();
@@ -76,10 +71,9 @@ pas.getallData();
 
 ---
 
-## 🧪 Example Operations
+## 🧪 Example Output
 
-### Add Person
-
+### Adding Person
 ```
 Enter the person name : Manoj
 Enter the person address : Pune
@@ -92,46 +86,45 @@ Person added successfully
 
 ## 🔧 Technologies Used
 
-* **Java 17+**
-* **Hibernate ORM 6.x**
-* **MySQL / MariaDB**
-* **Maven**
-* **IntelliJ IDEA**
+- **Java 17+**
+- **Hibernate ORM 6.x**
+- **MySQL / MariaDB**
+- **Maven**
+- **IntelliJ IDEA**
 
 ---
 
 ## 📌 Concepts Demonstrated
 
-* Hibernate Session & Transaction Management
-* One-to-One Mapping
-* Cascade Operations
-* CRUD Operations
-* HQL (`from Person`)
-* First-Level Cache & Dirty Checking
-* Console Input Handling
+- Hibernate Session & Transaction Management  
+- One-to-One Mapping  
+- Cascade Handling  
+- CRUD Operations  
+- HQL (`from Person`)  
+- Dirty Checking Mechanism  
+- Console Input Handling  
+- Entity Relationships  
 
 ---
 
 ## 📎 Future Enhancements
 
-* Convert to Spring Boot
-* Add Menu-Driven Interactive Console
-* Add Exception Handling
-* Add Logging (SLF4J)
-* Add Bidirectional Mapping (Person ↔ Adhar)
+- Convert to Spring Boot  
+- Add menu-based interactive console  
+- Add exception handling  
+- Add logging with SLF4J  
+- Add bidirectional mapping (Person ↔ Adhar)  
 
 ---
 
 ## 📄 License
 
-This project is for educational purposes.
-Feel free to fork and modify.
+This project is for educational purposes.  
+Feel free to fork and improve.
 
 ---
 
 ## 👨‍💻 Author
 
-**Manoj Bachhav**
+**Manoj Bachhav**  
 GitHub: [ManozBachhav](https://github.com/ManozBachhav)
-
-```
